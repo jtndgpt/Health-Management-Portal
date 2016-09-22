@@ -1,0 +1,242 @@
+<html>
+	<title>
+		Advance Health Management
+	</title>
+	<head>	
+		<link rel="stylesheet" type="text/css" href="styles.css">
+                <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<script src="script.js"></script>
+		<div class="row">
+			<a href="https://www.investonhealth.com"><img src="download.jpg" class="companylogo"></img></a>
+			<label class="companytitle"><a href="https://www.investonhealth.com" style="text-decoration: initial;">Invest on health</a></label>
+		</div>
+                <div>
+                    
+                </div>
+		<div style="margin-top: 34px;">
+			<label type="label" class="divtitle" >Health management portal</label>
+		</div>
+		<!--BMR calculation-->
+		<div class="col-md-5 subdivblock form-group" >
+			<div class="subdivblocklayout">
+				<label type="label" class="subdivtitle" >BMR Calculation</label><br>
+			</div>
+			
+			<label type="label" class="col-md-4 form-label" >Weight (kg): </label>
+			<input type="number" class="form-control" placeholder="eg. 68" id="weight"><br>
+			<label type="label" class="col-md-4 form-label">Height (cm): </label>
+			<input type="number"  class="form-control" placeholder="eg. 165" id="height"><br>
+			<label type="label" class="col-md-4 form-label">Age (years): </label>
+			<input type="number"  class="form-control" placeholder="eg. 33" id="age"><br>
+			<label type="label" class="col-md-4 form-label">Gender: </label>
+			<input type="radio" class="form-checkbox" name="gender" value="male" checked id="male"> Male
+			<input type="radio" class="form-checkbox" name="gender" value="female" id="female"> Female			
+			<div class="form-group">
+                            <button type="button" style="margin-top: 26px;margin-left:30px" class="cstm-btn" onclick="calculateBMR()">Calculate </button>
+				
+			</div>	
+			<div>
+				<label type="label" class="col-md-4 form-label">BMR(calories): </label>
+                                <input type="number"  class="form-control" id="bmr" disabled="disabled"><br>
+			</div>
+					
+		</div>	
+		
+		<!--TCR calculation-->
+		<div class="col-md-5 subdivblock form-group" >
+			<div class="subdivblocklayout">
+				<label type="label" class="subdivtitle"  >TCR Calculation</label><br>
+			</div>
+			<div class="form-group">
+                                <input type="radio" name="exercise" id="1" class="checkbox"/><label type="label" class="form-label">Little or no exercise </label><br>
+				<input type="radio" name="exercise" id="2" class="checkbox"/><label type="label" class="form-label">Little exercise (1-3 timse/week)</label><br>
+				<input type="radio" name="exercise" id="3" class="checkbox"/><label type="label" class="form-label">Moderate exercise (3-5 days/week)</label><br>
+				<input type="radio" name="exercise" id="4" class="checkbox"/><label type="label" class="form-label">Heavy exercise (6-7 days/week)</label><br>
+				<input type="radio" name="exercise" id="5" class="checkbox"/><label type="label" class="form-label">Very heavy exercise (physical job or exercise twice a day)</label><br>
+			</div>		
+			
+			<div class="form-group">
+				<button type="button" style="margin-top: 26px;margin-left:180px" class="cstm-btn" onclick="calculateTCR()">Calculate TCR</button>
+				
+			</div>
+			<div style="margin-top: 25px;">
+				<label type="label" class="col-md-4 form-label">TCR: </label>
+                                <input type="number"  class="form-control" id="tcr" disabled="disabled"><br>
+			</div>
+						
+		</div>
+
+		<!--TCR calculation-->
+		<div class="col-md-5 subdivblock form-group center" style="width: 800px;margin-left: 236px;" >
+			<div class="subdivblocklayout" style="width: 820px">
+				<label type="label" class="subdivtitle" >RDA Calculation</label><br>
+			</div>
+			<table>
+				<tr>
+					<th style="width: 130px;">Category</th>
+					<th style="width: 260px;">Food item</th>
+					<th style="width: 110px;">Calories</th>
+					<th style="width: 300px;">Sized</th>
+				</tr>
+				<tr>
+					<td>Protein</td>
+					<td>
+						<select id="protain" class="listingitem"  onchange="displayProtain()">
+							<option value="1">Select</option>
+							<option value="2">Butter Chicken (cup)</option>
+							<option value="3">Butter Chicken (gm)</option>
+							<option value="4">Kerala Chicken curry, Regular (home made) (cup)</option>
+							<option value="5">Kerala Chicken curry, Regular, (home made)(gm)</option>
+							<option value="6">Kerala Chicken curry, Regular</option>
+							<option value="7">Kerala Chicken curry, with Thenga kothu</option>
+							<option value="8">Chicken korma</option>
+							<option value="9">Chettinad Chicken Curry</option>
+							<option value="10">Szechuan Chicken</option>
+							<option value="11">Szechuan Chicken</option>
+							<option value="12">Roasted Chicken, Breast with bone, skinless,medium (4.2oz)</option>
+							<option value="13">Roasted diced chicken breast, boneless, skinless </option>
+							<option value="14">Roasted Chicken Breast  boneless, skinless </option>
+							<option value="15">Lemon chicken, Chinese style</option>
+							<option value="16">Roasted Broiled or Baked Chicken Breast</option>
+							<option value="17">Pepper Chicken, Maya Kaimal</option>
+							<option value="18">Chicken stew</option>
+							<option value="19">Fried chicken (leg/large piece)</option>
+							<option value="20">Roasted chicken</option>
+							<option value="21">Chicken, boneless, steamed, diced</option>
+							<option value="22">Shredded chicken</option>
+							<option value="23">Egg Hard Boiled</option>
+							<option value="24">Fried Egg</option>
+							<option value="25">Poached Egg</option>
+							<option value="26">Scrambled Egg</option>
+							<option value="27">Egg Omelet, Extra Large</option>
+							<option value="28">Egg Omelet, large</option>
+							<option value="29">Egg Omelet, medium</option>
+							<option value="30">Egg Omelet, small</option>
+							<option value="31">Egg Omelet</option>
+							<option value="32">Egg Omelet</option>							
+						</select>
+					</td>
+					<td>
+						<label id="protainCalories" class="form-label" >Kcal </label>
+					</td>
+					<td><input type="text" class="form-control-table" id="proteinFinal" disabled="disabled"><br></td>
+				</tr>
+				<tr>
+					<td>Grain</td>
+					<td>
+						<select id="grain" class="listingitem" onchange="displayGrain()">
+							<option value="1">Select</option>
+							<option value="2">Cereal</option>
+							<option value="3">Branflakes</option>
+							<option value="4">Muesli (dried fruits and nuts)</option>
+							<option value="5">Oatmeal cooked</option>
+							<option value="6">Oatmeal with milk</option>
+							<option value="7">Toasted Bread slices</option>
+							<option value="8">Porridge (english)</option>
+							<option value="9">Idli (medium)</option>
+							<option value="10">Idli (Large)</option>
+							<option value="11">Poha</option>
+							<option value="12">Upma</option>
+							<option value="13">Medu Vada</option>
+							<option value="14">Poori (4.5"dia)</option>
+							<option value="15">Uttapam</option>
+							<option value="16">Plain Dosa (medium)</option>
+							<option value="17">Wheat Dosa</option>
+							<option value="18">Adai/lentil crepes</option>
+							<option value="19">Appam, large</option>
+							<option value="20">Puttu </option>
+							<option value="21">Rava Upma or Rava Khichdi</option>
+							<option value="22">Idiyappam</option>
+							<option value="23">Masala Dosa</option>
+							<option value="24">Parotta</option>
+							<option value="25">Aloo Paratha</option>
+							<option value="26">Whole wheat Roti</option>
+							<option value="27">Chapati</option>							
+						</select>
+					</td>
+					<td>
+						<label id="grainCalories" class="form-label" >Kcal </label>
+					</td>
+					<td><input type="text" class="form-control-table" id="grainFinal" disabled="disabled"><br></td>
+				</tr>
+				<tr>
+					<td>Veggies</td>
+					<td>
+						<select id="veggies" class="listingitem" onchange="displayVeggies()">
+							<option value="1">Select</option>
+							<option value="2">Garden salad</option>
+							<option value="3">Green salad</option>
+							<option value="4">Peas salad</option>
+							<option value="5">Raw Veg salad</option>
+							<option value="6">Stir fried Vegetables</option>
+							<option value="7">Kidney Bean Salad</option>
+							<option value="8">Cabbage salad/coleslaw</option>
+							<option value="9">Cooked mixed Vegetables (Corn, bean, peas, Green beans, Carrots)</option>
+							<option value="10">Vegetable stew</option>
+							<option value="11">Radish Sambhar</option>
+							<option value="12">Vegetable sambhar</option>
+							<option value="13">Vegetable kurma</option>							
+						</select>
+					</td>
+					<td>
+						<label id="veggiesCalories" class="form-label" >Kcal </label>
+					</td>
+					<td><input type="text" class="form-control-table" id="veggiesFinal" disabled="disabled"><br></td>
+				</tr>
+				<tr>
+					<td>Fruit</td>
+					<td>
+						<select id="fruit" class="listingitem" onchange="displayFruit()">
+							<option value="1">Select</option>
+							<option value="2">Apple</option>
+							<option value="3">Pear</option>
+							<option value="4">Peach</option>
+							<option value="5">Guava slices</option>
+							<option value="6">Fruit salad without citrus fruits    </option>
+							<option value="7">Fruit Salad</option>
+							<option value="8">Apple Juice</option>
+							<option value="9">Grape Juice</option>
+							<option value="10">Orange Juice</option>
+							<option value="11">Pineapple Juice</option>
+							<option value="12">Smoothie with fruits or fruit juice</option>							
+						</select>
+					</td>
+					<td>
+						<label id="fruitCalories" class="form-label" >Kcal </label>
+					</td>
+					<td><input type="text" class="form-control-table" id="fruitFinal" disabled="disabled"><br></td>
+				</tr>
+				<tr>
+					<td>Dairy</td>
+					<td>
+						<select id="dairy" class="listingitem" onchange="displayDairy()">
+							<option value="1">Select</option>
+							<option value="2">Cheddar cheese slice</option>
+							<option value="3">Cheese slice-Britannia</option>
+							<option value="4">Cheese slice-Amul</option>
+							<option value="5">Mayonnaise</option>
+							<option value="6">Whole fat milk</option>
+							<option value="7">Low fat milk</option>
+							<option value="8">Fat free Milk</option>
+							<option value="9">Skim Milk</option>
+							<option value="10">Whole fat Yogurt(plain yogurt whol milk)</option>							
+						</select>
+					</td>
+					<td>
+						<label id="dairyCalories" class="form-label" >Kcal </label>
+					</td>
+					<td><input type="text" class="form-control-table" id="dairyFinal" disabled="disabled"><br></td>
+				</tr>				
+			</table>		
+			
+			<div class="form-group">
+                            <label type="label" id="error_msg" style="color:red;display:none;margin-left: 206px;margin-top: 19px;"></label>
+				<button type="button" style="margin-top: 26px;margin-left:334px" class="cstm-btn" onclick="calculateRDA()">Calculate </button>
+				
+			</div>			
+		</div>	
+		
+	</body>
+</html>

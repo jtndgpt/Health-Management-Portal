@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+    <servlet>
+        <servlet-name>CalculateBmr</servlet-name>
+        <servlet-class>CalculateBmr</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CalculateTcr</servlet-name>
+        <servlet-class>CalculateTcr</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CalculateRda</servlet-name>
+        <servlet-class>CalculateRda</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>selectFood</servlet-name>
+        <servlet-class>selectFood</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CalculateBmr</servlet-name>
+        <url-pattern>/CalculateBmrPath</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CalculateTcr</servlet-name>
+        <url-pattern>/CalculateTcrPath</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CalculateRda</servlet-name>
+        <url-pattern>/CalculateRdaPath</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>selectFood</servlet-name>
+        <url-pattern>/selectFoodPath</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
